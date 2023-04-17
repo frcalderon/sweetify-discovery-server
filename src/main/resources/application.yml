@@ -2,12 +2,15 @@ server:
   port: 8761
 
 spring:
-  application.name: discovery-server
-#  config:
-#    import: optional:configserver
+  application:
+    name: discovery-server
+  profiles:
+    active:
+      - dev
+  config:
+    import: optional:configurationserver:http://localhost:8888/
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-
