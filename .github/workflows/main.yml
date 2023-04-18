@@ -37,9 +37,13 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Get Project Version from pom.xml
+      uses: entimaniac/read-pom-version-action@1.0.0
+      id: getVersion
+
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: frcalderon/sweetify-discovery-server:latest
+        tags: frcalderon/sweetify-discovery-server:${{ steps.getVersion.outputs.version }}
