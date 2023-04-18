@@ -7,8 +7,8 @@ spring:
   profiles:
     active:
       - dev
-  config:
-    import: optional:configurationserver:http://localhost:8888/
+#  config:
+#    import: optional:configurationserver:http://localhost:8888/
 
 eureka:
   client:
