@@ -8,10 +8,7 @@ WORKDIR /app
 COPY target/*.jar /app/app.jar
 
 # Exponer el puerto que usará la aplicación
-EXPOSE 8080
-
-# Establecer la variable de entorno para la aplicación
-ENV SPRING_PROFILES_ACTIVE=prod
+EXPOSE 8761
 
 # Ejecutar el comando para iniciar la aplicación
 CMD ["java", "-jar", "/app/app.jar"]

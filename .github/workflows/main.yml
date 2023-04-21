@@ -46,4 +46,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: frcalderon/sweetify-discovery-server:${{ steps.getVersion.outputs.version }}
+        tags: frcalderon/sweetify-discovery-server:${{ steps.getVersion.outputs.version }} , frcalderon/sweetify-discovery-server:latest
